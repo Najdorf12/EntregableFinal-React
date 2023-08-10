@@ -13,7 +13,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 const ProductsDetail = () => {
   const { id } = useParams();
   const [productDetail, setproductDetail] = useState({});
-  const [rate,setRate] = useState(1)
+  const [rate, setRate] = useState(1);
   const dispatch = useDispatch();
   const allproducts = useSelector((state) => state.products);
 
@@ -31,22 +31,22 @@ const ProductsDetail = () => {
       .catch((error) => console.error(error));
   };
 
-  const increment = () =>{
-    setRate(rate + 1)
-  }
-  const decrement = () =>{
-    if(rate > 1){
-      setRate(rate - 1)
+  const increment = () => {
+    setRate(rate + 1);
+  };
+  const decrement = () => {
+    if (rate > 1) {
+      setRate(rate - 1);
     }
-  }
+  };
 
-  const addProductToCart = () =>{
+  const addProductToCart = () => {
     const data = {
-      "quantity": rate,
-      "productId": productDetail.id
-    }
-    dispatch(addProductsThunk(data))
-  }
+      quantity: rate,
+      productId: productDetail.id,
+    };
+    dispatch(addProductsThunk(data));
+  };
   return (
     <>
       <main className="product_detail--container">
@@ -72,7 +72,6 @@ const ProductsDetail = () => {
             md={7}
             lg={7}
             style={{
-              
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -86,11 +85,14 @@ const ProductsDetail = () => {
               </div>
 
               <div className="btn_product--info">
-                <Button onClick={increment} >+</Button>
-                           <p>{rate}</p>     
-                <Button onClick={decrement} >-</Button>
+                <Button style={{fontSize:"1.3rem",height:"75%",border:"none"}} onClick={increment}><i class='bx bx-plus-circle'></i></Button>
+                <p>{rate}</p>
+                <Button style={{fontSize:"1.3rem",height:"75%", border:"none"}} onClick={decrement}> <i class='bx bx-minus-circle' ></i></Button>
               </div>
-              <Button onClick={()=>addProductToCart()}>Añadir al Carrito</Button>
+
+              <Button style={{border:"none", width:"70%",alignSelf:"center", marginTop:"1.5rem"}} onClick={() => addProductToCart()}>
+                Añadir al Carrito
+              </Button>
             </section>
           </Col>
         </Row>
@@ -101,9 +103,7 @@ const ProductsDetail = () => {
           <h4>Productos Relacionados</h4>
           <ListGroup horizontal>
             {allproducts?.map((product) => (
-              <ListGroup.Item key={product.id}>
-                {product.title}
-              </ListGroup.Item>
+              <ListGroup.Item key={product.id}>{product.title}</ListGroup.Item>
             ))}
           </ListGroup>
         </Row>

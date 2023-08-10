@@ -50,24 +50,33 @@ function SideBarCart({ name, ...props }) {
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props} placement='end'>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Carrito :</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-         
-          <ul>
+         <div className='cart_container'>
+         <ul>
             { cart?.map(product => (
               <li key={product.product?.id}>
+                <div className='cart_btn-info'>
+              <Button onClick={()=> decrementQuantity(product)}> - </Button>
+                 <p>{product.quantity}</p> 
+              <Button onClick={()=> incrementQuantity(product)}> + </Button>
+              </div>
+                <div className='cart_img'>
                 <img src={product.product?.images[0]?.url} alt="" />
+                </div>
+                <div className='cart_info'>
                 <p>{product.product?.title}</p>
-
-                <Button onClick={()=> decrementQuantity(product)}> - </Button>
-                   <p>{product.quantity}</p> 
-                <Button onClick={()=> incrementQuantity(product)}> + </Button>
+                <p>${Math.floor(product.product?.price)}</p>
+                </div>
               </li>
             ))
          }
          </ul>
-         <Button onClick={()=>dispatch(purchaseCartThunk())}>COMPRAR</Button>
+         </div>
+         
+         <Button style={{marginTop:"10rem", marginLeft:"3rem", border:"none", filter:"drop-shadow(2px 2px 2px #b10647)", color:"whitesmoke",width:"80%" }} 
+         onClick={()=>dispatch(purchaseCartThunk())}>COMPRAR</Button>
         </Offcanvas.Body>
       </Offcanvas>
     </>

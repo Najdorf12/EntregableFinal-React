@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=Raleway:ital,wght@0,200;0,400;0,500;0,600;0,700;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 img{
@@ -96,10 +99,16 @@ z-index: 100;
 
 
   .product_detail--container{
-    
-    min-height: 70vh;
+    background-color:rgb(119, 108, 108);
+    min-height: 60vh;
     max-width: 90vw;
     margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    & img{
+      border-radius: 10px;
+    }
   }
   .product_detail--info{
     padding: 1rem;
@@ -109,7 +118,6 @@ z-index: 100;
   }
 
   .login_container{
-    background-color: red;
     margin: 0 auto;
     margin-top: 4rem;
     max-width: 40vw;
@@ -136,13 +144,11 @@ z-index: 100;
 }
 
 .categories_home{
-  background-color: red;
   height: 100vh;
   margin-top: 3rem;
 }
 
 .purchases{
-background-color: red;
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
@@ -160,11 +166,69 @@ flex-wrap: wrap;
 
 .btn_product--info{
   display: flex;
-  gap: 1rem;
+  gap: 1.7rem;
   align-items: center;
   justify-content: center;
+  margin-top: 1.8rem;
+  
    & p{
     font-size: 2rem;
     font-weight: 700;
+    color: rgb(189, 37, 49);
+    
    }
+}
+
+.btn_productCard{
+  display: flex;
+  justify-content:center;
+  height: 30px;
+  margin-top: 1rem;
+}
+
+.title_home{
+  margin-top: 4rem ;
+  color:darkgray;
+  text-align: center;
+}
+.cart_container{
+   & ul{
+    list-style: none;
+   }
+   & li{
+    border-radius: 10px;
+    background-color:#b10647;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin:.8rem;
+    padding: .3rem
+   }
+}
+.cart_img{ 
+  & img{
+    width: 70%;
+  }
+}
+.cart_info{
+  font-weight: 800;
+  width: 40rem;
+  font-size: 1.2rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cart_btn-info{
+  font-size: 1.2rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ & button{
+  border:none;
+  height: 10%;
+ }
+ 
 }

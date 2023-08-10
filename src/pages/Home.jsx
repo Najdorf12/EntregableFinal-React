@@ -39,10 +39,10 @@ const Home = () => {
   return (
     <main>
       <Row>
-        <Col md={4} lg={3} style={{position:"relative",marginTop:"3rem",}}>
-          
-            <ListGroup style={{position:"fixed", width:"16rem"}}>
-              <h3>CATEGORIAS</h3>
+        <Col md={4} lg={3} style={{position:"relative",marginTop:"3rem"}}>
+        
+            <ListGroup style={{position:"fixed", width:"16rem", filter: "drop-shadow(2px 2px 3px darkcyan)"}}>
+            <h3 style={{color:"gray"}}>CATEGORIAS</h3>
               {categories?.map((category) => (
                 <ListGroup.Item
                   key={category.id}
@@ -62,7 +62,7 @@ const Home = () => {
           
           <Row>
             <Col>
-              <InputGroup className="mb-3" style={{marginTop:"3rem"}}>
+              <InputGroup className="mb-3" style={{marginTop: "3rem"}}>
                 <Form.Control
                   placeholder="Samsung, Sony, Apple..."
                   aria-label="Samsung, Sony, Apple..."
@@ -72,7 +72,7 @@ const Home = () => {
                   
                 />
                 <Button
-                  variant="outline-secondary"
+                  variant="outline-info"
                   id="button-addon2"
                   onClick={() => searchProduct()}
                 >
@@ -81,11 +81,11 @@ const Home = () => {
               </InputGroup>
              
               <div className="title_home">
-              <h4>Nuestros Productos</h4>
+              <h3>Nuestros Productos :</h3>
           </div>
             </Col>
           </Row>
-          <Row xs={1} md={2} lg={3} style={{margin:"1rem"}}>
+          <Row xs={1} md={2} lg={3} style={{padding:"1rem"}}>
             {products?.map((product) => (
               <Col key={product.id}>
                 <ProductsCard data={product} />
