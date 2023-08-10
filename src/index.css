@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*LOADER*/
+.loader-container{
+background-color: rgb(0,0,0,0.70);
+position: fixed;
+right: 0;
+bottom: 0;
+left: 0;
+top: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 100;
+}
+
+.pyramid-loader {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: block;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg);
+  }
+  
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spin 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .pyramid-loader .wrapper .side {
+    width: 70px;
+    height: 70px;
+  /* you can choose any gradient or color you want */
+    /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: center top;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  .pyramid-loader .wrapper .side1 {
+    transform: rotateZ(-30deg) rotateY(90deg);
+    background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  }
+  
+  .pyramid-loader .wrapper .side2 {
+    transform: rotateZ(30deg) rotateY(90deg);
+    background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  }
+  
+  .pyramid-loader .wrapper .side3 {
+    transform: rotateX(30deg);
+    background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  }
+  
+  .pyramid-loader .wrapper .side4 {
+    transform: rotateX(-30deg);
+    background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  }
+  
+  .pyramid-loader .wrapper .shadow {
+    width: 60px;
+    height: 60px;
+    background: #8B5AD5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotateX(90deg) translateZ(-40px);
+    filter: blur(12px);
+  }
+
+
+  .product_detail--container{
+    
+    min-height: 70vh;
+    max-width: 90vw;
+    margin-top: 3rem;
+  }
+  .product_detail--info{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .login_container{
+    background-color: red;
+    margin: 0 auto;
+    margin-top: 4rem;
+    max-width: 40vw;
+    height: 50vh;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    & button{
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .login_container{
+      max-width: 70vw;
+
+    }
+  }
+  
+.nav-info{
+  font-size: 2rem;
+  
+}
+
+.categories_home{
+  background-color: red;
+  height: 100vh;
+  margin-top: 3rem;
+}
+
+.purchases{
+background-color: red;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+
+& img{
+  max-width: 100%;
+  display: block;
+  
+}
+}
+.purchases_products{
+  background-color: #2F2585;
+  list-style: none;
+}
+
+.btn_product--info{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+   & p{
+    font-size: 2rem;
+    font-weight: 700;
+   }
+}
